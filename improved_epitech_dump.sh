@@ -37,8 +37,14 @@ systemctl enable tlp
 # Install fastfetch and its dependencies.
 dnf install glibc libpci libvulkan https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
 
-# Install cutefish-desktop.
-dnf install cutefish-desktop  -y
+# Check if kde plasma flag is set
+if [ "$2" == "kde" || "$2" == "plasma" ]; then
+  # Install KDE Plasma desktop environnement
+  dnf groupinstall -y "KDE Plasma Workspaces"
+else
+  # Install cutefish-desktop.
+  dnf install cutefish-desktop  -y
+fi
 
 # Add fastfetch to bashrc.
 echo "fastfetch" >> /home/*/.bashrc
