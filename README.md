@@ -12,7 +12,7 @@ $ curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/m
 $ chmod +x improved_epitech_dump.sh
 $ ./improved_epitech_dump.sh
 ```
-if you want to use the regular XanMod kernel :
+if you want to use the XanMod kernel :
 
 ```sh
 $ cd /tmp
