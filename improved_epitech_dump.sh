@@ -8,13 +8,6 @@ if [ $UID -ne 0 ]; then
 	exit 1
 fi
 
-# Check if using Fedora 34.
-cat /etc/fedora-release | grep "Fedora release 34"
-if [[ $? -ne 0 ]]; then
-    echo "This script must be run onto a Fedora 34";
-    exit 1
-fi
-
 # Download dump script.
 curl -O https://raw.githubusercontent.com/Epitech/dump/master/install_packages_dump.sh
 
