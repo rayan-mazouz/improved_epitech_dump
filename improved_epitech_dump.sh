@@ -24,9 +24,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Change maximum parrallel downloads to 10.
 echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
 
-# Enable cutefish-desktop copr repo.
-dnf copr enable rmnscnce/cutefish-desktop -y
-
 # Refresh the repos, update the system.
 dnf update --refresh -y
 
@@ -36,9 +33,6 @@ systemctl enable tlp
 
 # Install fastfetch and its dependencies.
 dnf install glibc libpci libvulkan https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
-
-# Install cutefish-desktop.
-dnf install cutefish-desktop  -y
 
 # Add fastfetch to bashrc.
 echo "fastfetch" >> /home/*/.bashrc
