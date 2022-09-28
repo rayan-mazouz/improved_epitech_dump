@@ -9,7 +9,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 # Download dump script.
-curl -O https://raw.githubusercontent.com/Epitech/dump/master/install_packages_dump.sh
+curl -O https://gitlab.com/EpitechContent/dump/-/raw/master/install_packages_dump.sh
 
 # Run dump script.
 chmod +x install_packages_dump.sh
