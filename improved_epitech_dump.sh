@@ -2,7 +2,7 @@
 
 ### Authors : rayan.mazouz@epitech.eu , louis.dupraz@epitech.eu
 
-# Check if running as root
+# Check if running as root.
 if [ $UID -ne 0 ]; then
 	echo "Please run as root"
 	exit 1
