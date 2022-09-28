@@ -70,7 +70,7 @@ if [ "$(lspci | grep NVIDIA)" != "" ]
   echo "Waiting for drivers to initialize (About 90s) ..."
   sleep 90
 
-  # Force kmod compilation
+  # Force kmod compilation.
   akmods --force && dracut --force
 fi
 
