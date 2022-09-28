@@ -10,7 +10,7 @@ if you want to use the regular Fedora kernel :
 $ cd /tmp
 $ curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/improved_epitech_dump.sh
 $ chmod +x improved_epitech_dump.sh
-$ ./improved_epitech_dump.sh
+$ sudo ./improved_epitech_dump.sh
 ```
 if you want to use the XanMod kernel :
 
@@ -18,5 +18,5 @@ if you want to use the XanMod kernel :
 $ cd /tmp
 $ curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/improved_epitech_dump.sh
 $ chmod +x improved_epitech_dump.sh
-$ ./improved_epitech_dump.sh xanmod
+$ sudo ./improved_epitech_dump.sh xanmod
 ```
