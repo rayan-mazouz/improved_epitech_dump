@@ -37,15 +37,6 @@ dnf install glibc libpci libvulkan https://github.com/LinusDierheimer/fastfetch/
 # Add fastfetch to bashrc.
 echo "fastfetch" >> /home/*/.bashrc
 
-# Check if xanmod flag is set.
-if [ "$1" == "xanmod" ]; then
-  # Enable XanMod kernel copr repo.
-  dnf copr enable rmnscnce/kernel-xanmod -y
-  
-  # Install XanMod kernel.
-  dnf install kernel-xanmod-edge -y
-fi
-
 # Check if an nvidia card is present.
 if [ "$(lspci | grep NVIDIA)" != "" ]
   then
