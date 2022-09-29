@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# This file (and only this file !!!) is under the GPL3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
+# license and forked from https://github.com/Epitech/dump
+
 # Teams
 flatpak install flathub com.github.IsmaelMartinez.teams_for_linux
 
