@@ -8,16 +8,6 @@ if [ $UID -ne 0 ]; then
 	exit 1
 fi
 
-# Download dump script.
-curl -O https://gitlab.com/EpitechContent/dump/-/raw/master/install_packages_dump.sh
-
-# Run dump script.
-chmod +x install_packages_dump.sh
-./install_packages_dump.sh
-
-# Import Microsoft gpg keys.
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
 # Add flathub remote.
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -26,6 +16,13 @@ echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
 
 # Refresh the repos, update the system.
 dnf update --refresh -y
+
+# Download dump script.
+curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/dump.sh
+
+# Run dump script.
+chmod +x install_packages_dump.sh
+./install_packages_dump.sh
 
 # Install tlp (reduces battery usage).
 dnf install tlp tlp-rdw -y
