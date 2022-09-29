@@ -33,7 +33,7 @@ chmod +x dump.sh
 dnf install tlp tlp-rdw -y
 
 # Remove the conflicing packages (see doc :  https://linrunner.de/tlp/installation/fedora.html )
-dnf remove power-profiles-daemon
+dnf remove power-profiles-daemon -y
 
 systemctl enable tlp
 
