@@ -19,8 +19,13 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
-# Adding new gpg keys
-cp ./rpm-gpg/* /etc/pki/rpm-gpg/
+# Installing rpm fusion
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm
+dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-rawhide.noarch.rpm
+
+# Integration for KDE and GNOME
+dnf groupupdate core
 
 # Add flathub remote.
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
