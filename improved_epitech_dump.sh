@@ -8,12 +8,6 @@ if [ $UID -ne 0 ]; then
 	exit 1
 fi
 
-# Add flathub remote.
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# Change maximum parrallel downloads to 10.
-echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
-
 # Cloning the project, rendering useless other downloads from our github.
 git clone https://github.com/rayan-mazouz/improved_epitech_dump.git
 
@@ -22,6 +16,12 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
+# Add flathub remote.
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Change maximum parrallel downloads to 10.
+echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
+
 # Refresh the repos, update the system.
 dnf update --refresh -y
 
@@ -29,17 +29,15 @@ dnf update --refresh -y
 chmod +x dump.sh
 ./dump.sh
 
-# Install tlp (reduces battery usage).
-dnf install tlp tlp-rdw -y
-
 # Remove the conflicing packages (see doc :  https://linrunner.de/tlp/installation/fedora.html )
 dnf remove power-profiles-daemon -y
 
+# Install tlp (reduces battery usage).
+dnf install tlp tlp-rdw -y
 systemctl enable tlp
 
 # Mask services to ensure proper operation of tlp-rwd
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
-
 
 # Install fastfetch and its dependencies.
 dnf install glibc https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
