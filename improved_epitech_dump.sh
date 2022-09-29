@@ -19,6 +19,9 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
+# Adding new gpg keys
+cp ./rpm-gpg/* /etc/pki/rpm-gpg/
+
 # Add flathub remote.
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
