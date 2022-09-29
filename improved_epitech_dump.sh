@@ -25,7 +25,7 @@ if [ ls /etc | grep "yum.repos.d" == "" ]; then
 fi
 
 # Adding new repos.
-cp ./repos/* /etc/yum.repos.d/
+cp ./Repos/* /etc/yum.repos.d/
 
 # Refresh the repos, update the system.
 dnf update --refresh -y
