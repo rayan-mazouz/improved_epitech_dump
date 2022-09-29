@@ -44,7 +44,7 @@ if [ "$(lspci | grep NVIDIA)" != "" ]
   dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  -y
 
   # Install the nvidia akmods and its requirements.
-  dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda  -y
+  dnf install gcc kernel-headers kernel-devel akmod-nvidia nvidia-persistenced xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda  -y
   echo "Waiting for drivers to initialize (About 90s) ..."
   sleep 90
 
