@@ -102,7 +102,11 @@ packages_list=(boost-devel.x86_64
                mariadb-server.x86_64
                x264.x86_64
                lightspark.x86_64
-               lightspark-mozilla-plugin.x86_64)
+               lightspark-mozilla-plugin.x86_64
+               dnfdragora
+               dnfdragora-updater
+               geany
+               discord)
 
 dnf -y install ${packages_list[@]}
 
