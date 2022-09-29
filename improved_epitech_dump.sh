@@ -20,7 +20,8 @@ git clone https://github.com/rayan-mazouz/improved_epitech_dump.git
 cd improved_epitech_dump/
 
 # Creating /etc/yum.repos.d/ if it does not exist
-if [ ls /etc | grep "yum.repos.d" == "" ]; then
+yr = /etc/yum.repos.d
+if [ -d "$yr" ] ; then
 	mkdir /etc/yum.repos.d
 fi
 
