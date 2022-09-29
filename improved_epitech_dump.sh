@@ -19,7 +19,7 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
-# Adding gpg keys
+# Adding gpg keys.
 cp ./rpm-gpg/* /etc/pki/rpm-gpg/
 
 rpm --import https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/pubkey.gpg
@@ -29,13 +29,13 @@ rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-36
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-36
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Installing rpm fusion
+# Installing rpm fusion.
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y --skip-broken
 dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y --skip-broken
 dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm -y --skip-broken
 dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-rawhide.noarch.rpm -y --skip-broken
 
-# Integration for KDE and GNOME
+# Integration for KDE and GNOME.
 dnf groupupdate core -y --skip-broken
 
 # Add flathub remote.
@@ -51,14 +51,14 @@ dnf update --refresh -y
 chmod +x dump.sh
 ./dump.sh
 
-# Remove the conflicing packages (see doc :  https://linrunner.de/tlp/installation/fedora.html )
+# Remove the conflicing packages (see doc :  https://linrunner.de/tlp/installation/fedora.html).
 dnf remove power-profiles-daemon -y
 
 # Install tlp (reduces battery usage).
 dnf install tlp tlp-rdw -y
 systemctl enable tlp
 
-# Mask services to ensure proper operation of tlp-rwd
+# Mask services to ensure proper operation of tlp-rwd.
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # Refresh the repos, update the system.
