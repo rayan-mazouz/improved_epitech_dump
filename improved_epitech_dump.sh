@@ -19,6 +19,9 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
+# Adding gpg keys
+cp ./rpm-gpg/* /etc/pki/rpm-gpg/
+
 rpm --import https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/pubkey.gpg
 rpm --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
 rpm --import https://dl.google.com/linux/linux_signing_key.pub
