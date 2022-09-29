@@ -39,7 +39,7 @@ dnf install tlp tlp-rdw -y
 systemctl enable tlp
 
 # Install fastfetch and its dependencies.
-dnf install glibc libpci libvulkan https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
+dnf install glibc https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
 
 # Add fastfetch to bashrc.
 echo "fastfetch" >> /home/*/.bashrc
