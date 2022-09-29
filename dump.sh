@@ -113,7 +113,6 @@ packages_list=(boost-devel.x86_64
 dnf -y install ${packages_list[@]}
 
 # Teams
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
 dnf install teams -y
 
 # Criterion
