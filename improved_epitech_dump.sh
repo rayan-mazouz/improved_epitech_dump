@@ -14,15 +14,20 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Change maximum parrallel downloads to 10.
 echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
 
+# Cloning the project, rendering useless other downloads from our github.
+git clone https://github.com/rayan-mazouz/improved_epitech_dump.git
+
+cd improved_epitech_dump/
+
+# Adding new repos.
+cp ./repos/* /etc/yum.repos.d/
+
 # Refresh the repos, update the system.
 dnf update --refresh -y
 
-# Download dump script.
-curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/dump.sh
-
 # Run dump script.
-chmod +x install_packages_dump.sh
-./install_packages_dump.sh
+chmod +x dump.sh
+./dump.sh
 
 # Install tlp (reduces battery usage).
 dnf install tlp tlp-rdw -y
@@ -48,6 +53,9 @@ if [ "$(lspci | grep NVIDIA)" != "" ]
   # Force kmod compilation.
   akmods --force && dracut --force
 fi
+
+cd ..
+rm -rf improved_epitech_dump
 
 # Allow the user to chose between restarting now and posponing it.
 while [ true ] ; do
