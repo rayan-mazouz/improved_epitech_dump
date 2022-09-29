@@ -31,7 +31,15 @@ chmod +x dump.sh
 
 # Install tlp (reduces battery usage).
 dnf install tlp tlp-rdw -y
+
+# Remove the conflicing packages (see doc :  https://linrunner.de/tlp/installation/fedora.html )
+dnf remove power-profiles-daemon
+
 systemctl enable tlp
+
+# Mask services to ensure proper operation of tlp-rwd
+systemctl mask systemd-rfkill.service systemd-rfkill.socket
+
 
 # Install fastfetch and its dependencies.
 dnf install glibc https://github.com/LinusDierheimer/fastfetch/releases/download/1.7.2/fastfetch-1.7.2-Linux.rpm  -y
