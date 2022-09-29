@@ -19,8 +19,17 @@ cd improved_epitech_dump/
 # Adding new repos.
 cp ./Repos/* /etc/yum.repos.d/
 
+rpm --import https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/pubkey.gpg
+rpm --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+rpm --import https://dl.google.com/linux/linux_signing_key.pub
+rpm --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+rpm --import file:///usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
+rpm --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
 # Installing rpm fusion
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y --skip-broken
+dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y --skip-broken
 dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm -y --skip-broken
 dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-rawhide.noarch.rpm -y --skip-broken
 
