@@ -3,13 +3,6 @@
 # This file (and only this file !!!) is under the GPL3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 # license and forked from https://github.com/Epitech/dump
 
-# Teams
-####flatpak install flathub com.github.IsmaelMartinez.teams_for_linux
-
-# Using microsoft official package instead of the flatpack one
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-dnf install teams -y
-
 packages_list=(boost-devel.x86_64
                boost-static.x86_64
                ca-certificates.noarch
@@ -112,6 +105,10 @@ packages_list=(boost-devel.x86_64
                lightspark-mozilla-plugin.x86_64)
 
 dnf -y install ${packages_list[@]}
+
+# Teams
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+dnf install teams -y
 
 # Criterion
 curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz
