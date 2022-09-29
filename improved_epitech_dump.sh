@@ -8,6 +8,9 @@ if [ $UID -ne 0 ]; then
 	exit 1
 fi
 
+# Installing git, as some systems may not have it install right after install.
+dnf install git -y
+
 # Cloning the project, rendering useless other downloads from our github.
 git clone https://github.com/rayan-mazouz/improved_epitech_dump.git
 
