@@ -4,7 +4,7 @@
 # license and forked from https://github.com/Epitech/dump
 
 # Teams
-flatpak install flathub com.github.IsmaelMartinez.teams_for_linux
+flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y
 
 packages_list=(boost-devel.x86_64
                boost-static.x86_64
