@@ -106,7 +106,9 @@ packages_list=(boost-devel.x86_64
                dnfdragora
                dnfdragora-updater
                geany
-               discord)
+               discord
+               xfce4-dict
+               gparted)
 
 dnf -y install ${packages_list[@]}
 
