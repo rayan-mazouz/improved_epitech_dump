@@ -23,10 +23,9 @@ cp ./Repos/* /etc/yum.repos.d/
 cp ./rpm-gpg/* /etc/pki/rpm-gpg/
 
 rpm --import https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/pubkey.gpg
-rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-36-noarch
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-36-*
 rpm --import https://dl.google.com/linux/linux_signing_key.pub
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-36
-rpm --import /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-36
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-36
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
