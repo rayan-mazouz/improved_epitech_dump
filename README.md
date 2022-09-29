@@ -6,3 +6,11 @@
 ```sh
 cd /tmp ; curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/improved_epitech_dump.sh ; chmod +x improved_epitech_dump.sh ; sudo ./improved_epitech_dump.sh
 ```
+
+
+### The install nvidia drivers script can be used on all fedora distributions. If you need a full install of the Epitech dump, use the first scrip.
+
+### Running the script :
+```sh
+cd /tmp ; curl -O https://raw.githubusercontent.com/rayan-mazouz/improved_epitech_dump/main/install_nvidia_drivers.sh ; sudo sh install_nvidia_drivers.sh
+```
