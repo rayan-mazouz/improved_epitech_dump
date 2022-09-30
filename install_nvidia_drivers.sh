@@ -19,11 +19,11 @@ fi
 # Solve microsoft teams gpg key problem for fedora, Epitech build
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # Add the fusionrpm repo which contains the nvidia akmods
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y --skip-broken
 # Refresh the repos, update the packets and the kernel
 sudo dnf update -y
 # Install the nvidia akmods and its requirements
-sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda
+sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda -y --skip-broken
 echo "Waiting for drivers to initialize (About 90s) ..."
 sleep 90
 # Force kmod compilation
