@@ -82,6 +82,13 @@ fi
 cd ..
 rm -rf improved_epitech_dump
 
+# Create folders for the coding style checkers and download it.
+mkdir ~/CodingStyleChecker
+cd ~/CodingStyleChecker
+wget https://raw.githubusercontent.com/Epitech/coding-style-checker/main/coding-style.sh; chmod +x coding-style.sh
+mkdir ./Outputs
+cd /tmp
+
 # Allow the user to chose between restarting now and posponing it.
 while [ true ] ; do
 
