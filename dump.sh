@@ -58,8 +58,6 @@ packages_list=(boost-devel.x86_64
                zsh.x86_64
                avr-gcc.x86_64
                qt-devel
-               docker
-               docker-compose
                java-17-openjdk
                java-17-openjdk-devel
                boost
@@ -111,6 +109,12 @@ packages_list=(boost-devel.x86_64
                gparted)
 
 dnf -y --skip-broken install ${packages_list[@]}
+
+# Docker
+dnf -y install dnf-plugins-core
+dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+systemctl start docker
 
 # Teams
 dnf install teams -y --skip-broken
