@@ -9,7 +9,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 # Installing git, as some systems may not have it install right after install.
-dnf install git -y
+dnf install git -y --skip-broken
 
 # Cloning the project, rendering useless other downloads from our github.
 git clone https://github.com/rayan-mazouz/improved_epitech_dump.git
@@ -45,7 +45,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
 
 # Refresh the repos, update the system.
-dnf update --refresh -y
+dnf update --refresh -y --skip-broken
 
 # Run dump script.
 chmod +x dump.sh
@@ -55,23 +55,23 @@ chmod +x dump.sh
 dnf remove power-profiles-daemon -y
 
 # Install tlp (reduces battery usage).
-dnf install tlp tlp-rdw -y
+dnf install tlp tlp-rdw -y --skip-broken
 systemctl enable tlp
 
 # Mask services to ensure proper operation of tlp-rwd.
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # Refresh the repos, update the system.
-dnf update --refresh -y
+dnf update --refresh -y --skip-broken
 
 # Check if an nvidia card is present.
 if [ "$(lspci | grep NVIDIA)" != "" ]
   then
   # Add the fusionrpm repo which contains the nvidia akmods.
-  dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  -y
+  dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  -y --skip-broken
 
   # Install the nvidia akmods and its requirements.
-  dnf install gcc kernel-headers kernel-devel akmod-nvidia nvidia-persistenced xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda  -y
+  dnf install gcc kernel-headers kernel-devel akmod-nvidia nvidia-persistenced xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-cuda  -y --skip-broken
   echo "Waiting for drivers to initialize (About 90s) ..."
   sleep 90
 
