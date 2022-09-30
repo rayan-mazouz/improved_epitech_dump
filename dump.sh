@@ -110,10 +110,10 @@ packages_list=(boost-devel.x86_64
                xfce4-dict
                gparted)
 
-dnf -y install ${packages_list[@]}
+dnf -y --skip-broken install ${packages_list[@]}
 
 # Teams
-dnf install teams -y
+dnf install teams -y --skip-broken
 
 # Criterion
 curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz
