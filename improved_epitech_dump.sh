@@ -83,7 +83,8 @@ cd ..
 rm -rf improved_epitech_dump
 
 # Create folders for the coding style checkers and download it.
-cd ~
+USERNAME=$(id -nu 1000)
+cd /home/"$USERNAME"/
 git clone https://github.com/Epitech/coding-style-checker.git
 cd ./coding-style-checker
 mkdir ./Outputs
