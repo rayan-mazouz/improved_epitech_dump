@@ -84,11 +84,7 @@ rm -rf improved_epitech_dump
 
 # Create folders for the coding style checkers and download it.
 USERNAME=$(id -nu 1000)
-cd /home/"$USERNAME"/
-git clone https://github.com/Epitech/coding-style-checker.git
-cd ./coding-style-checker
-mkdir ./Outputs
-cd /tmp
+sudo runuser -l "$USERNAME" -c 'git clone https://github.com/Epitech/coding-style-checker.git /home/"$USERNAME"/coding-style-checker'
 
 # Allow the user to chose between restarting now and posponing it.
 while [ true ] ; do
