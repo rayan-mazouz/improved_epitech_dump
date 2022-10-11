@@ -64,6 +64,9 @@ systemctl mask systemd-rfkill.service systemd-rfkill.socket
 # Refresh the repos, update the system.
 dnf update --refresh -y --skip-broken
 
+# Install wifi drivers for 5GHz wifi.
+dnf install akmod-wl -y
+
 # Check if an nvidia card is present.
 if [ "$(lspci | grep NVIDIA)" != "" ]
   then
