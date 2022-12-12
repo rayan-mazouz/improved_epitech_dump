@@ -1,4 +1,4 @@
 [rpmfusion-free]
 name=rpmfusion-free
 enabled=1
-mirrorlist=http://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-36&arch=x86_64
+mirrorlist=http://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-$releasever&arch=x86_64
