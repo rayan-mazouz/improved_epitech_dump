@@ -1,4 +1,4 @@
 [rpmfusion-nonfree]
 name=rpmfusion-nonfree
 enabled=1
-mirrorlist=http://mirrors.rpmfusion.org/mirrorlist?repo=nonfree-fedora-36&arch=x86_64
+mirrorlist=http://mirrors.rpmfusion.org/mirrorlist?repo=nonfree-fedora-$releasever&arch=x86_64
